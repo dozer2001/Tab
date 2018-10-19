@@ -97,12 +97,20 @@ window.addEventListener('DOMContentLoaded', function () {
     ul.addEventListener('click', function () {
         event.preventDefault();
         let target = event.target;
-        let poz = document.querySelector(target.hash).getBoundingClientRect();
-        if( poz.top < 0 ){
-            requestAnimationFrame(scrollUp);
-        }else{
-            requestAnimationFrame(scrollDown);
+        if( event.target.hash){
+            console.log(event.target.hash);
+
+            let poz = document.querySelector(target.hash).getBoundingClientRect();
+            console.log(document.querySelector(target.hash).getBoundingClientRect());
+            if( poz.top < 0){
+                requestAnimationFrame(scrollUp);
+            }else{
+                requestAnimationFrame(scrollDown);
+            }
         }
+
+
+
         function scrollUp() {
             let poz = document.querySelector(target.hash).getBoundingClientRect();
             if (poz.top < 0) {
