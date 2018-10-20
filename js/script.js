@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < allTabs.length; i++) {
-                if (target == allTabs[i]) {
+                if (target === allTabs[i]) {
                     HideAllContent(0);
                     ShowAllContent(i);
                     break;
@@ -36,6 +36,7 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+// Timer
     let deadLiner = '2018-10-19';
 
     function getTimeRemaining(endTime) {
@@ -85,7 +86,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     setClock('timer', deadLiner);
-
+// Timer
 // Scroll
     let li = document.getElementsByTagName('li');
     let ul = document.querySelector('.container'),
